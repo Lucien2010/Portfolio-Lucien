@@ -35,6 +35,7 @@
         }
         .video iframe {
             border: none;
+            max-width: 100%;
         }
         a {
             color: #c0c0c0;
@@ -49,6 +50,7 @@
             justify-content: center;
             gap: 40px;
             margin-top: 20px;
+            flex-wrap: wrap;
         }
         .socials a {
             display: flex;
@@ -71,6 +73,20 @@
             padding: 15px;
             background: rgba(30, 30, 30, 0.9);
             font-size: 14px;
+        }
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+                padding: 15px;
+            }
+            header {
+                font-size: 22px;
+                padding: 15px;
+            }
+            .socials img {
+                width: 60px;
+                height: 60px;
+            }
         }
     </style>
 </head>
