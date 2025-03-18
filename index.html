@@ -29,7 +29,6 @@
             padding: 20px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
             transition: transform 0.3s ease;
-            text-align: left;
         }
         .container:hover {
             transform: scale(1.02);
@@ -47,24 +46,25 @@
         }
         .socials {
             display: flex;
-            flex-direction: column;
-            align-items: flex-start;
+            justify-content: center;
+            gap: 40px;
             margin-top: 20px;
         }
         .socials a {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            gap: 10px;
+            text-align: center;
             transition: transform 0.3s ease;
             font-size: 18px;
             margin-bottom: 10px;
         }
         .socials a:hover {
-            transform: scale(1.05);
+            transform: scale(1.1);
         }
         .socials img {
-            width: 30px;
-            height: 30px;
+            width: 60px;
+            height: 60px;
         }
         footer {
             margin-top: 20px;
@@ -126,10 +126,12 @@
         <h2>Social Media</h2>
         <div class="socials">
             <a href="https://www.tiktok.com/@pc.check?_t=ZN-8ummhOejTJm&_r=1" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/TikTok_logo.png" alt="TikTok"> TikTok
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/TikTok_logo.svg" alt="TikTok">
+                <p>TikTok</p>
             </a>
             <a href="https://youtube.com/@daitoaya-_-?si=h-_NjGP4YqGMd1kU" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg" alt="YouTube"> YouTube
+                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg" alt="YouTube">
+                <p>YouTube</p>
             </a>
         </div>
     </div>
