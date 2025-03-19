@@ -21,6 +21,46 @@
             text-transform: uppercase;
             letter-spacing: 2px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            position: relative;
+        }
+        .menu {
+            cursor: pointer;
+            font-size: 24px;
+            transition: transform 0.3s ease;
+        }
+        .menu:hover {
+            transform: scale(1.2);
+        }
+        .dropdown {
+            display: none;
+            position: absolute;
+            right: 40px;
+            top: 60px;
+            background: rgba(30, 30, 30, 0.9);
+            border-radius: 5px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+            padding: 10px;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        .dropdown.show {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .dropdown a {
+            display: block;
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+        }
+        .dropdown a:hover {
+            background: rgba(255, 255, 255, 0.1);
         }
         .container {
             width: 80%;
@@ -45,29 +85,6 @@
         a:hover {
             text-decoration: underline;
         }
-        .socials {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            margin-top: 20px;
-            flex-wrap: wrap;
-        }
-        .socials a {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            transition: transform 0.3s ease;
-            font-size: 18px;
-            margin-bottom: 10px;
-        }
-        .socials a:hover {
-            transform: scale(1.1);
-        }
-        .socials img {
-            width: 80px;
-            height: 80px;
-        }
         footer {
             margin-top: 20px;
             padding: 15px;
@@ -83,63 +100,34 @@
                 font-size: 22px;
                 padding: 15px;
             }
-            .socials img {
-                width: 60px;
-                height: 60px;
-            }
         }
     </style>
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("menuDropdown");
+            if (menu.classList.contains("show")) {
+                menu.classList.remove("show");
+                setTimeout(() => { menu.style.display = "none"; }, 300);
+            } else {
+                menu.style.display = "block";
+                setTimeout(() => { menu.classList.add("show"); }, 10);
+            }
+        }
+    </script>
 </head>
 <body>
     <header>
         Lucien - Mediamatik Portfolio
+        <div class="menu" onclick="toggleMenu()">☰</div>
+        <div class="dropdown" id="menuDropdown">
+            <a href="lebenslauf.html">Lebenslauf</a>
+            <a href="projekte.html">Projekte</a>
+        </div>
     </header>
     
     <div class="container">
         <h2>Über mich</h2>
         <p>Ich strebe eine Ausbildung als Mediamatiker in EFZ an. Ich habe mich bereits stark mit den Aufgaben in diesem Bereich auseinandergesetzt und auch selber bereits eigene Videos zugeschnitten.</p>
-    </div>
-
-    <div class="container">
-        <h2>Schulische Erfahrung</h2>
-        <p><strong>Primarschule Pfeffingen</strong> | 1. – 6. Klasse</p>
-        <p><strong>Sekundarschule Arlesheim</strong> | 1 Jahr Leistungszug E</p>
-        <p><strong>Sekundarschule VIA, Liestal</strong> | seit 2 Jahren Leistungszug E</p>
-    </div>
-    
-    <div class="container">
-        <h2>Sprachkenntnisse</h2>
-        <p><strong>Deutsch:</strong> Muttersprache</p>
-        <p><strong>Französisch:</strong> Schulkenntnisse (seit 3. Klasse)</p>
-        <p><strong>Englisch:</strong> Schulkenntnisse (seit 5. Klasse)</p>
-    </div>
-    
-    <div class="container">
-        <h2>Informatikkenntnisse</h2>
-        <p><strong>Docs:</strong> Grundkenntnisse</p>
-        <p><strong>Word:</strong> Grundkenntnisse</p>
-        <p><strong>PowerPoint:</strong> Gute Kenntnisse</p>
-        <p><strong>DaVinci Resolve:</strong> Grundkenntnisse</p>
-    </div>
-
-    <div class="container">
-        <h2>Social Media</h2>
-        <div class="socials">
-            <a href="https://www.tiktok.com/@pc.check?_t=ZN-8ummhOejTJm&_r=1" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/en/a/a9/TikTok_logo.svg" alt="TikTok">
-                <p>TikTok</p>
-            </a>
-            <a href="https://youtube.com/@daitoaya-_-?si=h-_NjGP4YqGMd1kU" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg" alt="YouTube">
-                <p>YouTube</p>
-            </a>
-        </div>
-    </div>
-    
-    <div class="container">
-        <h2>Kontakt</h2>
-        <p>Email: <a href="mailto:Lucien.stoeckli@gmail.com">Lucien.stoeckli@gmail.com</a></p>
-        <p>Telefon: +41 79 940 13 68</p>
     </div>
     
     <footer>
