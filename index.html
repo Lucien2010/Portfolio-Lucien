@@ -15,16 +15,15 @@
         }
         header {
             background: rgba(30, 30, 30, 0.9);
-            padding: 20px;
-            font-size: 28px;
+            padding: 15px 40px;
+            font-size: 24px;
             font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+            text-transform: none;
+            letter-spacing: 1px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 40px;
             position: relative;
         }
         .menu {
@@ -33,7 +32,7 @@
             transition: transform 0.3s ease;
         }
         .menu:hover {
-            transform: scale(1.2);
+            transform: rotate(90deg) scale(1.1);
         }
         .dropdown {
             display: none;
@@ -62,6 +61,16 @@
         .dropdown a:hover {
             background: rgba(255, 255, 255, 0.1);
         }
+        .submenu {
+            display: none;
+            padding-left: 15px;
+        }
+        .submenu a {
+            font-size: 14px;
+        }
+        .dropdown .social-toggle:hover + .submenu {
+            display: block;
+        }
         .container {
             width: 80%;
             margin: 20px auto;
@@ -85,6 +94,11 @@
         a:hover {
             text-decoration: underline;
         }
+        .hint {
+            font-size: 16px;
+            margin-top: 10px;
+            color: #bbb;
+        }
         footer {
             margin-top: 20px;
             padding: 15px;
@@ -97,7 +111,7 @@
                 padding: 15px;
             }
             header {
-                font-size: 22px;
+                font-size: 20px;
                 padding: 15px;
             }
         }
@@ -122,12 +136,20 @@
         <div class="dropdown" id="menuDropdown">
             <a href="lebenslauf.html">Lebenslauf</a>
             <a href="projekte.html">Projekte</a>
+            <a class="social-toggle" href="#">Social Media ▼</a>
+            <div class="submenu">
+                <a href="https://www.tiktok.com/@pc.check?_t=ZN-8ummhOejTJm&_r=1" target="_blank">TikTok</a>
+                <a href="https://youtube.com/@daitoaya-_-?si=h-_NjGP4YqGMd1kU" target="_blank">YouTube</a>
+            </div>
         </div>
     </header>
     
     <div class="container">
-        <h2>Über mich</h2>
-        <p>Ich strebe eine Ausbildung als Mediamatiker in EFZ an. Ich habe mich bereits stark mit den Aufgaben in diesem Bereich auseinandergesetzt und auch selber bereits eigene Videos zugeschnitten.</p>
+        <h2>Willkommen auf meinem Portfolio</h2>
+        <p>Hier findest du Informationen über mich, meine Fähigkeiten und meine bisherigen Projekte.</p>
+        <p>Ich strebe eine Ausbildung als Mediamatiker in EFZ an und habe bereits eigene Videos bearbeitet und geschnitten.</p>
+        <p>Für weitere Informationen, klicke oben rechts auf das Menü (☰).</p>
+        <p class="hint">⬆️ Menü für mehr Details ⬆️</p>
     </div>
     
     <footer>
