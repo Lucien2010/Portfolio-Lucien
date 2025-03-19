@@ -72,8 +72,11 @@
             display: none;
             padding-left: 15px;
         }
-        .social-toggle:hover + .submenu {
+        .submenu.show {
             display: block;
+        }
+        .dropdown .social-toggle {
+            cursor: pointer;
         }
         .main-container {
             width: 80%;
@@ -135,6 +138,10 @@
                 menuIcon.classList.add("open");
             }
         }
+        function toggleSubMenu() {
+            var submenu = document.getElementById("submenu");
+            submenu.classList.toggle("show");
+        }
     </script>
 </head>
 <body>
@@ -144,8 +151,8 @@
         <div class="dropdown" id="menuDropdown">
             <a href="lebenslauf.html">Lebenslauf</a>
             <a href="projekte.html">Projekte</a>
-            <a class="social-toggle" href="#">Social Media ▼</a>
-            <div class="submenu">
+            <a class="social-toggle" onclick="toggleSubMenu()">Social Media ▼</a>
+            <div class="submenu" id="submenu">
                 <a href="https://www.tiktok.com/@pc.check?_t=ZN-8ummhOejTJm&_r=1" target="_blank">TikTok</a>
                 <a href="https://youtube.com/@daitoaya-_-?si=h-_NjGP4YqGMd1kU" target="_blank">YouTube</a>
             </div>
