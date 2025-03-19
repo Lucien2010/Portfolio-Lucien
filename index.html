@@ -31,7 +31,7 @@
             font-size: 24px;
             transition: transform 0.3s ease;
         }
-        .menu:hover {
+        .menu.open {
             transform: rotate(90deg) scale(1.1);
         }
         .dropdown {
@@ -60,6 +60,8 @@
         .dropdown a {
             display: block;
             color: white;
+            font-size: 16px;
+            font-weight: normal;
             padding: 10px;
             text-decoration: none;
         }
@@ -70,10 +72,7 @@
             display: none;
             padding-left: 15px;
         }
-        .submenu a {
-            font-size: 14px;
-        }
-        .dropdown .social-toggle:hover + .submenu {
+        .social-toggle:hover + .submenu {
             display: block;
         }
         .main-container {
@@ -124,13 +123,16 @@
     <script>
         function toggleMenu() {
             var menu = document.getElementById("menuDropdown");
+            var menuIcon = document.querySelector(".menu");
             if (menu.classList.contains("show")) {
                 menu.classList.remove("show");
                 menu.classList.add("hide");
+                menuIcon.classList.remove("open");
                 setTimeout(() => { menu.style.display = "none"; menu.classList.remove("hide"); }, 300);
             } else {
                 menu.style.display = "block";
                 setTimeout(() => { menu.classList.add("show"); }, 10);
+                menuIcon.classList.add("open");
             }
         }
     </script>
